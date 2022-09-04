@@ -1,9 +1,11 @@
-package ru.mirea.task2.Shape;
+package ru.mirea.task2;
+
+import ru.mirea.task2.Shape;
 
 import java.util.Scanner;
 
 public class ShapeTester {
-    public static void main(String[] args) {
+    public void test() {
         Scanner in = new Scanner(System.in);
         String m,t,c;
         System.out.println("Enter type, color and material");

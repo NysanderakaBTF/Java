@@ -1,4 +1,4 @@
-package ru.mirea.task2.Shape;
+package ru.mirea.task2;
 
 public class Shape {
     private String type, color, material;
@@ -40,6 +40,7 @@ public class Shape {
     public String getMaterial(){
         return material;
     }
+    @Override
     public String toString(){
         return "Shape "+type+" is "+color+" and made of "+material;
     }
