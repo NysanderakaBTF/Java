@@ -2,16 +2,17 @@ package ru.mirea.task5.Dish;
 
 public abstract class Dish {
     protected String size, material;
-    public Dish()
-    {
-        size = "small";
-        material = "glass";
-    }
     public Dish(String size, String material)
     {
         this.material = material;
         this.size = size;
     }
+    public Dish()
+    {
+        size = "small";
+        material = "glass";
+    }
+
     public String getMaterial() {
         return material;
     }

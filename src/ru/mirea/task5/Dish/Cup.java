@@ -12,8 +12,8 @@ public class Cup extends Dish{
         super(color, size);
         purpose = "universal";
     }
-
+    @Override
     public String toString() {
-        return "Cup is "+", "+size+",made of "+material+"should be used for "+purpose;
+        return "Cup is "+", "+size+",made of "+material+" should be used for: "+purpose;
     }
 }
