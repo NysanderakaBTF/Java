@@ -12,6 +12,10 @@ public class Table extends Furniture{
         this.size=size;
     }
 
+    public Table() {
+
+    }
+
     @Override
     public String toString() {
         return "The table is "+size+", "+color+", made of"+material;
