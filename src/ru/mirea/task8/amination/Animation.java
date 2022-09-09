@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Animation extends JFrame {
+    private int sh;
     private ArrayList<Image> images = new ArrayList<>();
     public Animation() throws IOException {
         //frame.add(this);
@@ -16,8 +17,9 @@ public class Animation extends JFrame {
         this.setSize(600, 400);
         this.setVisible(true);
         for(int i=0;i<14;i++){
-            images.add(ImageIO.read(new File("./images/frame_" + i + "_delay-0.06s.jpg")));
+            images.add(new ImageIcon("./images/frame_" + i + "_delay-0.06s.jpg").getImage());
         }
+        sh=0;
     }
 
 
@@ -26,16 +28,16 @@ public class Animation extends JFrame {
         new Animation();
     }
     public void paint(Graphics g){
-        System.out.println("painting");
-        g.drawImage(images.get(0),0,0,null );
-        Graphics2D gr2d = (Graphics2D) g;
-            for (int i = 0; i < 14; i++) {
-                gr2d.drawImage(images.get(i), 0, 0, 600, 400, null);
-                try {
-                    Thread.sleep(60);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
+        super.paint(g);
+        if(sh==0) {sh++; return;}
+        System.out.println(images);
+        g.drawImage(images.get(sh % 14), 0, 0, 600, 400, null);
+        try {
+            Thread.sleep(60);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        sh++;
+        repaint();
     }
 }
