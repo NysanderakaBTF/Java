@@ -9,44 +9,33 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Animation extends JFrame {
-    JFrame frame = new JFrame("Task 8/3");
-    ArrayList<Image> images = new ArrayList<Image>(0);
-    public Animation(){
+    private ArrayList<Image> images = new ArrayList<>();
+    public Animation() throws IOException {
         //frame.add(this);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 400);
-        frame.setVisible(true);
-    }
-
-
-    public void loadImg() throws IOException {
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(600, 400);
+        this.setVisible(true);
         for(int i=0;i<14;i++){
-            images.add(ImageIO.read(new File("./images/frame_" + i + "_delay-0.06s.gif")));
+            images.add(ImageIO.read(new File("./images/frame_" + i + "_delay-0.06s.jpg")));
         }
     }
 
-    public static void main(String[] args) {
+
+
+    public static void main(String[] args) throws IOException {
         new Animation();
     }
     public void paint(Graphics g){
         System.out.println("painting");
-        try {
-            loadImg();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println(images);
         g.drawImage(images.get(0),0,0,null );
-
-       /* while (true) {
+        Graphics2D gr2d = (Graphics2D) g;
             for (int i = 0; i < 14; i++) {
-                gr2d.drawImage(images.get(i),0,0, 600, 400, null);
+                gr2d.drawImage(images.get(i), 0, 0, 600, 400, null);
+                try {
+                    Thread.sleep(60);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
-            try {
-                Thread.sleep(60);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
-        }*/
     }
 }
