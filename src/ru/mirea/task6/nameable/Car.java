@@ -14,6 +14,6 @@ public class Car implements Nameable{
 
     @Override
     public String getName() {
-        return null;
+        return model;
     }
 }

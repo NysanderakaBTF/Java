@@ -6,10 +6,19 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Random;
 
 public class Student implements Comparable<Student> {
-    private int iDNumber;
-    private String name;
-    private int GPA;
-    private static int all;
+    protected int iDNumber;
+
+    public String toString() {
+        return "Student{" +
+                "iDNumber=" + iDNumber +
+                ", name='" + name + '\'' +
+                ", GPA=" + GPA +
+                '}';
+    }
+
+    protected String name;
+    protected int GPA;
+    protected static int all;
 
     public Student(String name, int GPA, int id) {
         this.iDNumber = id++;
@@ -38,15 +47,6 @@ public class Student implements Comparable<Student> {
 
     public int getId() {
         return iDNumber;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "iDNumber=" + iDNumber +
-                ", name='" + name + '\'' +
-                ", GPA=" + GPA +
-                '}';
     }
 
     public void setId(int id) {
