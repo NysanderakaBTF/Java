@@ -1,6 +1,5 @@
 package ru.mirea.task1;
 
-import org.jetbrains.annotations.NotNull;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -79,7 +78,7 @@ public class Main {
         System.out.println();
 
     }
-    public static void main(String @NotNull [] args){
+    public static void main(String[] args){
         task1();
         Scanner in = new Scanner(System.in);
         System.out.println("Args display");

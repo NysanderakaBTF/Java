@@ -13,6 +13,6 @@ public class ShowImage extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
     public static void main(String[] args) throws IOException {
-        new ShowImage(args[0]);
+        new ShowImage("img1.jpg");
     }
 }

@@ -23,9 +23,9 @@ public class MouseEvents extends JFrame {
         JLabel l5 = new JLabel("CENTER",SwingConstants.CENTER);
         Container window = getContentPane();
         window.add(l1, BorderLayout.NORTH);
-        window.add(l2, BorderLayout.SOUTH);
-        window.add(l3, BorderLayout.WEST);
-        window.add(l4, BorderLayout.EAST);
+        window.add(l3, BorderLayout.SOUTH);
+        window.add(l4, BorderLayout.WEST);
+        window.add(l2, BorderLayout.EAST);
         window.add(l5, BorderLayout.CENTER);
 
 
