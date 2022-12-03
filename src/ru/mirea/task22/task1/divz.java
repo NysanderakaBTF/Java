@@ -1,8 +1,8 @@
 package ru.mirea.task22.task1;
 
-public class DivisionByZeroException extends Exception {
+public class divz extends Exception {
 
-    public DivisionByZeroException(){
+    public divz(){
         super("Division by zero! Retry with another expression");
     }
 }

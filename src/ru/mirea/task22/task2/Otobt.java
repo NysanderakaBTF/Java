@@ -4,18 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class CalculatorView {
+public class Otobt {
 
     private JPanel panelMainFrame;
 
-    private JButton btnZero,
-            btnOne,
-            btnTwo,
-            btnThree,
-            btnFour,
-            btnFive,
-            btnSix,
-            btnSeven,
+    private JButton btnZero, btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven,
             btnEight,
             btnNine,
             btnPlus,
@@ -28,7 +21,7 @@ public class CalculatorView {
 
     private JTextField textUserInputField;
 
-    public CalculatorView(JPanel panelMainFrame){
+    public Otobt(JPanel panelMainFrame){
         this.panelMainFrame = panelMainFrame;
 
         panelMainFrame.setSize(200,300);

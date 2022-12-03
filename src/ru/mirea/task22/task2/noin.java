@@ -1,7 +1,7 @@
 package ru.mirea.task22.task2;
 
-public class DoubleParseException extends Exception{
-    public DoubleParseException(){
+public class noin extends Exception{
+    public noin(){
         super("Wrong value! Try another expression");
     }
 }

@@ -1,16 +1,16 @@
 package ru.mirea.task23.task1;
 
 public class ArrayQueue {
-    private int curentSize = 0;
-    private int realSize = 8;
-    private Object array[];
+    private int siz = 0;
+    private int cap = 8;
+    private Object a[];
 
 
     //Инвариант: currentSize >=0 и currentSize < realSize
 
     public ArrayQueue(){
-        array = new Object[realSize];
-        curentSize = 0;
+        a = new Object[cap];
+        siz = 0;
     }
 
     /*
@@ -19,13 +19,13 @@ public class ArrayQueue {
     * */
 
     private void increaseRealSize( int newSize){
-        if ( newSize < array.length) return;
-        realSize = newSize;
-        Object[] tmp = new Object[realSize];
+        if ( newSize < a.length) return;
+        cap = newSize;
+        Object[] tmp = new Object[cap];
 
-        System.arraycopy(array, 0, tmp, 0, curentSize);
+        System.arraycopy(a, 0, tmp, 0, siz);
 
-        array = tmp;
+        a = tmp;
 
     }
 
@@ -37,45 +37,45 @@ public class ArrayQueue {
 
     public void enqueue(Object newElement){
         if ( newElement == null) return;
-        if (array.length + 1 >= realSize*0.75) increaseRealSize(realSize*2);
+        if (a.length + 1 >= cap *0.75) increaseRealSize(cap *2);
 
-        array[curentSize++] = newElement;
+        a[siz++] = newElement;
     }
 
     public Object element() {
         if(isEmpty()) return null;
-        return array[0];
+        return a[0];
     }
 
     public Object dequeue() {
         if (isEmpty()) return null;
-        Object[] tmp = new Object[realSize];
-        Object firstElement = array[0];
-        System.arraycopy(array, 0, tmp, 0, curentSize);
-        curentSize--;
-        array = tmp;
+        Object[] tmp = new Object[cap];
+        Object firstElement = a[0];
+        System.arraycopy(a, 0, tmp, 0, siz);
+        siz--;
+        a = tmp;
         return firstElement;
     }
 
 
     public int size() {
-        return curentSize;
+        return siz;
     }
 
     public boolean isEmpty() {
-        return (curentSize == 0);
+        return (siz == 0);
     }
 
 
     public void clear() {
-        curentSize = 0;
-        realSize = 8;
-        array = new Object[realSize];
+        siz = 0;
+        cap = 8;
+        a = new Object[cap];
     }
 
     public String show() {
         String result = "Queue: ";
-        for (int i = 0; i < curentSize; i++) result += array[i] + " ";
+        for (int i = 0; i < siz; i++) result += a[i] + " ";
         return result;
     }
 }
